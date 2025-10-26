@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaguer's Pokemon Card Tracker</title>
+    <meta name="author" content="Teaguer Chubak">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+    <header>
+        <h1>Pokemon Card Tracker</h1>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="user-info">
+            <label for="username">Enter Username: </label>
+            <input name="username" id="username">
+            <button id="submit-username">Enter</button>
+        </section>
+
+        <section class="dropdown">
+            <label for="setLists">Choose a set:</label>
+            <select name="setLists" id="set-lists">
+                <optgroup label="1st Gen (1997-2000)">
+                    <option value="base">Base Set</option>
+                    <option value="jungle">Jungle</option>
+                    <option value="fossil">Fossil</option>
+                    <option value="base2">Base Set 2</option>
+                </optgroup>
+                <optgroup label="2nd Gen (2001-2004)">
+                    <option value="neoGenesis">Neo Genesis</option>
+                </optgroup>
+            </select>
+            <button id="setListsButton">Enter</button>
+        </section>
+
+        <section class="display">
+            <div class="cardInfo">
+                <h2 class="cardName">Alakazam</h2>
+                <img class="cardImg" src="https://images.pokemontcg.io/base1/1.png">
+                <a href="">View card details</a>
+                <input type="checkbox" id="card001">
+            </div>
+
+            <div class="cardInfo">
+                <h2 class="cardName">Blastoise</h2>
+                <img class="cardImg" src="https://images.pokemontcg.io/base1/2.png">
+                <a href="">View card details</a>
+                <input type="checkbox" id="card001">
+            </div>
+
+            <div class="cardInfo">
+                <h2 class="cardName">Chansey</h2>
+                <img class="cardImg" src="https://images.pokemontcg.io/base1/3.png">
+                <a href="">View card details</a>
+                <input type="checkbox" id="card001">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025</p>
+        <p>Website created for a school project.</p>
+    </footer>
+</body>
+
+</html>
