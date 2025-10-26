@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaguer's Pokemon Card Tracker</title>
     <meta name="author" content="Teaguer Chubak">
-    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <header>
-        <h1>Pokemon Card Tracker</h1>
+        <h1 class="title">Pokemon Card Tracker</h1>
         <nav class="menu">
             <a href="#">Home</a>
             <a href="#">Contact</a>
@@ -20,10 +25,13 @@
 
     <main>
         <section class="user-info">
-            <label for="username">Enter Username: </label>
+            <label for="username">Enter Username:*** </label>
             <input name="username" id="username">
             <button id="submit-username">Enter</button>
         </section>
+
+        <div class="horizontal-line"></div>
+
 
         <section class="dropdown">
             <label for="setLists">Choose a set:</label>
@@ -41,26 +49,31 @@
             <button id="setListsButton">Enter</button>
         </section>
 
+        <div class="horizontal-line"></div>
+
         <section class="display">
             <div class="cardInfo">
                 <h2 class="cardName">Alakazam</h2>
                 <img class="cardImg" src="https://images.pokemontcg.io/base1/1.png">
-                <a href="">View card details</a>
-                <input type="checkbox" id="card001">
+                <a href="" class="cardLink">View card details</a>
+                <!--
+                <label class="checkLabel" for="checkbox">Owned?</label>
+                -->
+                <input class="checkbox" type="checkbox" id="card001">
             </div>
 
             <div class="cardInfo">
                 <h2 class="cardName">Blastoise</h2>
                 <img class="cardImg" src="https://images.pokemontcg.io/base1/2.png">
-                <a href="">View card details</a>
-                <input type="checkbox" id="card001">
+                <a href="" class="cardLink">View card details</a>
+                <input class="checkbox" type="checkbox" id="card001">
             </div>
 
             <div class="cardInfo">
                 <h2 class="cardName">Chansey</h2>
                 <img class="cardImg" src="https://images.pokemontcg.io/base1/3.png">
-                <a href="">View card details</a>
-                <input type="checkbox" id="card001">
+                <a href="" class="cardLink">View card details</a>
+                <input class="checkbox" type="checkbox" id="card001">
             </div>
         </section>
     </main>
