@@ -13,6 +13,9 @@ footer p {
     font-size: small;
 }
 
+
+/* Add for larger screen size */
 .spacer {
+    display: none;
     border-left: 1px solid white;
 }
