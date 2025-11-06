@@ -23,5 +23,9 @@ p {
 }
 
 main {
+    min-height: 100dvh;
+}
+
+main {
     padding: 1.5rem;
 }

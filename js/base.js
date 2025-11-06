@@ -32,6 +32,4 @@ dropdown.addEventListener("change", async function() {
     const cardsHtml = cardData.map(card => checklistTemplate(card)).join("");
 
     listContainer.innerHTML = cardsHtml;
-
-    //console.log(cardData);//
 });
