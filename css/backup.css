@@ -14,17 +14,12 @@ header {
 }
 
 .menu {
-    display: none;
-    flex-direction: column;
+    display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     line-height: 1.5rem;
     background-color: black;
     border-bottom: 5px solid black;
-}
-
-.menu.toggle {
-    display: flex;
 }
 
 .menu a {
@@ -35,6 +30,7 @@ header {
     padding: .5rem;
     font-weight: bold;
     font-size: larger;
+    width: 40%;
     border-radius: 5px;
 }
 
@@ -42,39 +38,10 @@ header {
     background-color: var(--color-blue);
 }
 
-.menu-toggle {
-    background-color: black;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: .5rem;
-    font-weight: bold;
-    font-size: larger;
-    font-family: var(--font-paragraphs);
-    cursor: pointer;
-}
-
 @media screen and (min-width: 600px) {
     .menu {
         display: flex;
-        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
-    }
-
-    .menu a {
-        text-align: center;
-        background-color: black;
-        color: white;
-        text-decoration: none;
-        padding: .5rem;
-        font-weight: bold;
-        font-size: larger;
-        width: 40%;
-        border-radius: 5px;
-    }
-
-    .menu-toggle {
-        display: none;
     }
 }
