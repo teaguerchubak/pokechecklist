@@ -7,7 +7,7 @@
     <meta name="author" content="Teaguer Chubak">
     <meta name="description" content="A checklist for tracking Pokemon card collections.">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/contact.css">
     <script type="module" src="js/base.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,38 +30,30 @@
     </header>
 
     <main>
+        <h2>Contact:</h2>
+        <form>
+            <div class="first-name">
+                <label for="first-name" class="txt">First name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="John">
+            </div>
 
-        <!--
-        <section class="user-info">
-            <label for="username">Enter Username:*** </label>
-            <input name="username" id="username">
-            <button id="submit-username">Enter</button>
-        </section>
+            <div class="last-name">
+                <label for="last-name" class="txt">Last name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Smith">
+            </div>
+        
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="123name@email.com" required>
+            </div>
 
-        <div class="horizontal-line"></div>
-        -->
+            <div class="comment">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" placeholder="Add your comment here."></textarea>
+            </div>
 
-
-        <section class="dropdown">
-            <label for="setLists">Choose a set:</label>
-            <select name="setLists" id="setLists">
-                <option value="" selected disabled hidden>Choose here</option>
-                <optgroup label="1st Gen (1997-2000)">
-                    <option value="base1" id="base1">Base Set</option>
-                    <option value="base2" id="base2">Jungle</option>
-                    <option value="base3" id="base3">Fossil</option>
-                    <option value="base4" id="base4">Base Set 2</option>
-                </optgroup>
-                <optgroup label="2nd Gen (2001-2004)">
-                    <option value="neo1">Neo Genesis</option>
-                </optgroup>
-            </select>
-        </section>
-
-        <div class="horizontal-line"></div>
-
-        <section class="display">
-        </section>
+            <input type="submit" value="Submit" class="submit">
+        </form>
     </main>
 
     <footer>
