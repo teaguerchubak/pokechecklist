@@ -68,73 +68,28 @@ form {
 
 
 @media screen and (min-width: 600px) {
-    h2 {
-    padding-bottom: .5rem;
-}
-
 form {
-    font-family: var(--font-paragraphs);
-    border: 2pt solid black;
-    border-radius: 10px;
-    padding: 1rem;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 200px .5fr;
-    background-color: rgba(67, 122, 142, .4);
-    column-gap: 1rem;
-    row-gap: 1rem;
 }
 
 .first-name {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-#first-name {
-    line-height: 200%;
 }
 
 .last-name {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-#last-name {
-    line-height: 200%;
 }
 
 .email {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-#email {
-    line-height: 200%;
 }
 
 .comment {
     grid-column: 1 / 3;
     grid-row: 3 / 4;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-#comment {
-    height: 100%;
-}
-
-.submit {
-    width: 50%;
-    font-family: var(--font-paragraphs);
 }
 }
