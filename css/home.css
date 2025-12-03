@@ -97,6 +97,10 @@
     padding-top: 1rem;
 }
 
+.cardImg:hover {
+    cursor: pointer;
+}
+
 .largeImg {
     margin: auto;
     display: block;
