@@ -24,5 +24,28 @@ export function createCardList() {
         const cardsHtml = cardData.map(card => checklistTemplate(card)).join("");
 
         listContainer.innerHTML = cardsHtml;
+
+        const img = document.querySelectorAll(".cardImg");
+        const modal = document.querySelector(".modal");
+        const modalImg = document.querySelector(".modal-img");
+        const closeModal = document.querySelector(".close");
+    
+        img.forEach(image => {
+        image.addEventListener("click", () => {
+            modalImg.src = image.dataset.large;
+            modalImg.classList.add("largeImg");
+
+            modal.style.display = "block";
+
+        });
+
+        closeModal.addEventListener("click", () => {
+            image.src = image.dataset.small;
+            image.classList.remove("largeImg");
+            modal.style.display = "none";
+        });
     });
+    });
+
+    
 }

@@ -84,6 +84,8 @@
     cursor: pointer;
 }
 
+/* IMAGE */
+
 .cardImg {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
@@ -94,6 +96,55 @@
     align-self: center;
     padding-top: 1rem;
 }
+
+.largeImg {
+    margin: auto;
+    display: block;
+    animation: zoom 1s;
+    height: 70vh;
+    max-width: 90vw;
+    object-fit: contain;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(.5);
+        opacity: .5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    cursor: pointer;
+    color: #bbb;
+}
+
+/* LINK */
 
 .cardLink {
     grid-column: 1 / 3;
