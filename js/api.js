@@ -21,7 +21,7 @@ export function createCardList() {
 
         listContainer.innerHTML = "";
 
-        const cardsHtml = cardData.map(card => checklistTemplate(card)).join("");
+        const cardsHtml = cardData.map(card => checklistTemplate(card, selected)).join("");
 
         listContainer.innerHTML = cardsHtml;
 

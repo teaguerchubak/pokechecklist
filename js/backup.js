@@ -1,3 +1,5 @@
+// API
+
 import { checklistTemplate } from "./templates.js";
 
 const baseUrl = "https://raw.githubusercontent.com/teaguerchubak/pokemontcg/refs/heads/main/cards/en/";
@@ -24,16 +26,41 @@ export function createCardList() {
         const cardsHtml = cardData.map(card => checklistTemplate(card)).join("");
 
         listContainer.innerHTML = cardsHtml;
+
+        const img = document.querySelectorAll(".cardImg");
+        const modal = document.querySelector(".modal");
+        const modalImg = document.querySelector(".modal-img");
+        const closeModal = document.querySelector(".close");
+    
+        img.forEach(image => {
+        image.addEventListener("click", () => {
+            modalImg.src = image.dataset.large;
+            modalImg.classList.add("largeImg");
+
+            modal.style.display = "block";
+
+        });
+
+        closeModal.addEventListener("click", () => {
+            image.src = image.dataset.small;
+            image.classList.remove("largeImg");
+            modal.style.display = "none";
+        });
     });
+    });
+
+    
 }
 
 
 
 
+// TEMPLATES
+
 export function checklistTemplate(data) {
     return `<div class="cardInfo">
         <h2 class="cardName">${data.name}</h2>
-        <img class="cardImg" loading="lazy" src="${data.images.small}" alt="${data.name}">
+        <img class="cardImg" loading="lazy" src="${data.images.small}" alt="${data.name}" data-small="${data.images.small}" data-large="${data.images.large}">
         <a href="" class="cardLink">View card details</a>
         <div class="checkboxContainer">
             <input class="checkbox" type="checkbox" id="${data.id}">
