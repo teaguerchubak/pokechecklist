@@ -14,17 +14,18 @@ function abilitiesTemplate(abilities = []) {
         return `<p>No abilities</p>`;
     }
 
-    return abilities.map(ability => `<p>${ability.name}:<br>${ability.text}</p>`).join(' ');
+    return abilities.map(ability => `<p class="ability">${ability.name}:<br>${ability.text}</p>`).join(' ');
 }
 
 export function cardDetailsTemplate(data) {
     return `<section class="details">
     <div class="text">
     <h3>${data.name}</h3>
-    <p>${data.subtypes}</p>
-    <p>Evolves from: ${data.evolvesFrom}</p>
-    <p>Ability: ${abilitiesTemplate(data.abilities)}</p>
+    <p class="bold pad">${data.subtypes}</p>
+    <p class="bold">Evolves from</p><p class="pad">${data.evolvesFrom}</p>
+    <p class="bold">Ability</p><div class="pad">${abilitiesTemplate(data.abilities)}</div>
     </div>
-    <img src="${data.images.small}" alt="${data.name}">
+    <div class="horizontal-line"></div>
+    <img class="detail-img" src="${data.images.small}" alt="${data.name}">
     </section>`;
 }

@@ -1,0 +1,56 @@
+h2 {
+    padding-bottom: 1rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: rgba(67, 122, 142, .4);
+}
+
+.detail-img {
+    width: 80%;
+    align-self: center;
+    padding-top: 1rem;
+}
+
+.text h3 {
+    font-size: 150%;
+    padding-bottom: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pad {
+    padding-bottom: 1rem;
+}
+
+.ability {
+    text-align: justify;
+}
+
+.horizontal-line {
+    border-top: 2px solid rgba(0, 0, 0, .1);
+    width: 20%;
+    margin: 1rem auto;
+}
+
+@media screen and (min-width: 600px) {
+    .details {
+        flex-direction: row;
+    }
+
+    .text {
+        padding-right: 2rem;
+    }
+
+    .horizontal-line {
+        display: none;
+    }
+}
