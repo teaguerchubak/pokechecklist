@@ -1,5 +1,4 @@
-// API
-
+import { checklistStorage, saveSet } from "./storage.js";
 import { checklistTemplate } from "./templates.js";
 
 const baseUrl = "https://raw.githubusercontent.com/teaguerchubak/pokemontcg/refs/heads/main/cards/en/";
@@ -18,14 +17,18 @@ export function createCardList() {
     const listContainer = document.querySelector(".display");
 
     dropdown.addEventListener("change", async function() {
-        const selected = document.querySelector("#setLists").value;
+        const selected = dropdown.value;
+        saveSet(selected);
+
         const cardData = await getJson(selected + ".json");
 
         listContainer.innerHTML = "";
 
-        const cardsHtml = cardData.map(card => checklistTemplate(card)).join("");
+        const cardsHtml = cardData.map(card => checklistTemplate(card, selected)).join("");
 
         listContainer.innerHTML = cardsHtml;
+
+        checklistStorage(selected);
 
         const img = document.querySelectorAll(".cardImg");
         const modal = document.querySelector(".modal");
@@ -50,20 +53,4 @@ export function createCardList() {
     });
 
     
-}
-
-
-
-
-// TEMPLATES
-
-export function checklistTemplate(data) {
-    return `<div class="cardInfo">
-        <h2 class="cardName">${data.name}</h2>
-        <img class="cardImg" loading="lazy" src="${data.images.small}" alt="${data.name}" data-small="${data.images.small}" data-large="${data.images.large}">
-        <a href="" class="cardLink">View card details</a>
-        <div class="checkboxContainer">
-            <input class="checkbox" type="checkbox" id="${data.id}">
-        </div>
-    </div>`
 }

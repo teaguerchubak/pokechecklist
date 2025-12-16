@@ -1,3 +1,4 @@
+import { checklistStorage, saveSet } from "./storage.js";
 import { checklistTemplate } from "./templates.js";
 
 const baseUrl = "https://raw.githubusercontent.com/teaguerchubak/pokemontcg/refs/heads/main/cards/en/";
@@ -11,32 +12,31 @@ export async function getJson(url) {
     return cardJson;
 }
 
-export function createCardList() {
-    const dropdown = document.getElementById("setLists");
+async function loadSetData(selected) {
     const listContainer = document.querySelector(".display");
 
-    dropdown.addEventListener("change", async function() {
-        const selected = document.querySelector("#setLists").value;
-        const cardData = await getJson(selected + ".json");
+    saveSet(selected);
 
-        listContainer.innerHTML = "";
+    const cardData = await getJson(selected + ".json");
 
-        const cardsHtml = cardData.map(card => checklistTemplate(card, selected)).join("");
+    listContainer.innerHTML = "";
 
-        listContainer.innerHTML = cardsHtml;
+    const cardsHtml = cardData.map(card => checklistTemplate(card, selected)).join("");
 
-        const img = document.querySelectorAll(".cardImg");
-        const modal = document.querySelector(".modal");
-        const modalImg = document.querySelector(".modal-img");
-        const closeModal = document.querySelector(".close");
+    listContainer.innerHTML = cardsHtml;
+
+    checklistStorage(selected);
+
+    const img = document.querySelectorAll(".cardImg");
+    const modal = document.querySelector(".modal");
+    const modalImg = document.querySelector(".modal-img");
+    const closeModal = document.querySelector(".close");
     
-        img.forEach(image => {
+    img.forEach(image => {
         image.addEventListener("click", () => {
             modalImg.src = image.dataset.large;
             modalImg.classList.add("largeImg");
-
             modal.style.display = "block";
-
         });
 
         closeModal.addEventListener("click", () => {
@@ -45,7 +45,13 @@ export function createCardList() {
             modal.style.display = "none";
         });
     });
-    });
+}
 
-    
+export function createCardList() {
+    const dropdown = document.getElementById("setLists");
+
+    dropdown.addEventListener("change", () => {
+        const selected = dropdown.value;
+        loadSetData(selected);
+    });
 }
