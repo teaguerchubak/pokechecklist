@@ -1,5 +1,24 @@
-h2 {
+.heading-details {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     padding-bottom: 1rem;
+}
+
+.return-button {
+    text-decoration: none;
+    line-height: 150%;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 0 1rem;
+    border: 2px solid black;
+}
+
+.return-button:hover {
+    background-color: white;
+    color: black;
 }
 
 .details {
@@ -13,7 +32,7 @@ h2 {
 }
 
 .detail-img {
-    width: 80%;
+    width: auto;
     align-self: center;
     padding-top: 1rem;
 }
@@ -44,6 +63,9 @@ h2 {
 @media screen and (min-width: 600px) {
     .details {
         flex-direction: row;
+        justify-content: center;
+        width: fit-content;
+        justify-self: center;
     }
 
     .text {
