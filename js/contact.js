@@ -1,9 +1,15 @@
-function submitAlert() {
+function formSubmit() {
     const form = document.querySelector(".form");
 
-    form.addEventListener("submit", function() {
-        alert("Your comment has been submitted!");
-    })
+    form.addEventListener("submit", function (x) {
+        x.preventDefault();
+
+        swal.fire({
+            title: "Success!",
+            text: "Your comment has been submitted!",
+            icon: "success"
+        });
+    });
 }
 
-submitAlert();
+formSubmit();

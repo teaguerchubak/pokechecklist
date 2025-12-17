@@ -16,6 +16,7 @@ header {
     background-color: var(--color-blue);
     padding: 1rem;
     width: 85%;
+    text-decoration: none;
 }
 
 .menu {
