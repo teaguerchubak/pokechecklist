@@ -16,6 +16,10 @@ header {
     background-color: var(--color-blue);
     padding: 1rem;
     width: 85%;
+    cursor: pointer;
+}
+
+.title, .title:visited, .title:hover, .title:active, .title:focus {
     text-decoration: none;
 }
 
