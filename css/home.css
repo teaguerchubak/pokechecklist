@@ -37,6 +37,12 @@ details p {
     justify-self: center;
 }
 
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
 
 /* DISPLAY GRID */
 
